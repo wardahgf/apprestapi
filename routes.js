@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = function(app){
+module.exports = function (app) {
     var jsonku = require('./controler');
 
     app.route('/')
@@ -9,8 +9,10 @@ module.exports = function(app){
         .get(jsonku.tampilsemuamahasiswa);
     app.route('/tampil/:id')
         .get(jsonku.tampilberdasarkanid);
-        app.route('/tambah')
+    app.route('/tambah')
         .post(jsonku.tambahMahasiswa);
-        app.route('/ubah')
+    app.route('/ubah')
         .put(jsonku.ubahMahasiswa);
-    }
+    app.route('/hapus')
+        .delete(jsonku.hapusMahasiswa);
+}
